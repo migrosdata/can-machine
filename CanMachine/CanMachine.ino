@@ -59,11 +59,11 @@ unsigned long previousMillis = 0; // will store last time LED was updated
 
 // constants won't change:
 
-const long intervalRelay1 = 7 * 60 * 1000UL;  // interval at which to wait (milliseconds)
-const long intervalOn1 = 3 * 60 * 1000UL;     // interval at which to wait (milliseconds)
+const long intervalRelay1 = 7 * 60 * 1000UL;    // interval at which to wait (milliseconds)
+const long intervalOn1 = 3 * 60 * 1000UL;       // interval at which to wait (milliseconds)
 
-const long intervalRelay2 = 15 * 60 * 1000UL;  // interval at which to wait (milliseconds)
-const long intervalOn2 =  3 * 60 * 1000UL;     // interval at which to wait (milliseconds)
+const long intervalRelay2 = 15 * 60 * 1000UL;   // interval at which to wait (milliseconds)
+const long intervalOn2 =  3 * 60 * 1000UL;      // interval at which to wait (milliseconds)
 
 bool running = false;
 bool relay1Done = false;
@@ -76,10 +76,10 @@ bool relay2Done = false;
 void setup() {
   pinMode(ledPin, OUTPUT);        // declare LED as output
   pinMode(pirPin, INPUT);         // declare sensor as input
-  pinMode(relayPin1, OUTPUT);      // declare relay as output
-  pinMode(relayPin2, OUTPUT);      // declare relay as output
-  digitalWrite(relayPin1, LOW);  // turn relay OFF      
-  digitalWrite(relayPin2, LOW);  // turn relay OFF
+  pinMode(relayPin1, OUTPUT);     // declare relay as output
+  pinMode(relayPin2, OUTPUT);     // declare relay as output
+  digitalWrite(relayPin1, LOW);   // turn relay OFF      
+  digitalWrite(relayPin2, LOW);   // turn relay OFF
   Serial.begin(9600);
   Serial.println("Setup completed");
 }
@@ -106,11 +106,11 @@ void loop(){
     }
     if (currentMillis - previousMillis >= intervalRelay2) { 
       Serial.println("turn relay 2 ON");
-      digitalWrite(relayPin2, HIGH); // turn relay 1 ON
+      digitalWrite(relayPin2, HIGH); // turn relay 2 ON
     }
     if (currentMillis - previousMillis >= intervalRelay2 + intervalOn2) {
       Serial.println("turn relay 2 OFF");
-      digitalWrite(relayPin2, LOW);  // turn relay OFF      
+      digitalWrite(relayPin2, LOW);  // turn relay 2 OFF      
       previousMillis = 0;     
       running = false;
       relay1Done = false;
