@@ -120,7 +120,7 @@ void loop(){
   } else {
     // Motion sensor is running
     pirStat = digitalRead(pirPin); 
-    if (pirStat == HIGH) {         // if motion detected
+    if (pirStat == LOW) {         // if motion detected
       Serial.println("Hey I got you!!!");
       running = true;
     } else {
