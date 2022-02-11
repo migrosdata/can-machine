@@ -48,8 +48,8 @@
 
 const int ledPin = 13;            // choose the pin for the LED
 const int pirPin = 2;             // choose the input pin (for PIR sensor)
-int relayPin1 = 7;               // choose the pin for the relay
-int relayPin2 = 8;               // choose the pin for the relay
+int relayPin1 = 7;                // choose the pin for the relay
+int relayPin2 = 8;                // choose the pin for the relay
 
 int pirStat = 0;                  // PIR status
 int pirState = LOW;               // we start, assuming no motion detected
@@ -58,20 +58,12 @@ int val = 0;                      // variable for reading the pin status
 unsigned long previousMillis = 0; // will store last time LED was updated
 
 // constants won't change:
-/*
-const long intervalRelay1 = 7 * 60 * 1000UL; // 420000;  // interval at which to wait (milliseconds)
+
+const long intervalRelay1 = 7 * 60 * 1000UL;  // interval at which to wait (milliseconds)
 const long intervalOn1 = 3 * 60 * 1000UL;     // interval at which to wait (milliseconds)
 
-// const long intervalRelay2 = 15 * 60 * 1000UL;  // interval at which to wait (milliseconds)
-const long intervalRelay2 = 0UL;  // interval at which to wait (milliseconds)
-const long intervalOn2 =  17 * 60 * 1000UL;     // interval at which to wait (milliseconds)
-*/
-
-const long intervalRelay1 = 5 * 1000UL; // 420000;  // interval at which to wait (milliseconds)
-const long intervalOn1 =  5 * 1000UL;     // interval at which to wait (milliseconds)
-
-const long intervalRelay2 = 0UL;  // interval at which to wait (milliseconds)
-const long intervalOn2 = 15 * 1000UL;     // interval at which to wait (milliseconds)
+const long intervalRelay2 = 15 * 60 * 1000UL;  // interval at which to wait (milliseconds)
+const long intervalOn2 =  3 * 60 * 1000UL;     // interval at which to wait (milliseconds)
 
 bool running = false;
 bool relay1Done = false;
